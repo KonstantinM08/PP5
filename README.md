@@ -57,7 +57,7 @@ git commit -m "Initial commit"
    create mode 100644 readme.md
 git checkout -b feature-1
    Switched to a new branch 'feature-1'
-echo "I am currently learning how to use Git branches and merge them." > featu$ echo "I am currently learning how to use Git branches and merge them." > feature.txt
+echo "I am currently learning how to use Git branches and merge them." > feature.txt
 git add feature.txt
 git checkout master
 git merge feature-1
