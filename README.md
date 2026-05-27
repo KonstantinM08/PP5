@@ -45,6 +45,42 @@ In this exercise you will:
 ```bash
 # Paste here the sequence of git commands you ran
 # and the relevant terminal output (e.g., branch listing, merge messages)
+mkdir git-PP5
+cd git-PP5
+git init
+   Initialized empty Git repository in C:/Users/Konstamonster/Desktop/git-PP5/.git/
+touch readme.md
+git add readme.md
+git commit -m "Initial commit"
+   [master (root-commit) 2606f19] Initial commit
+   1 file changed, 0 insertions(+), 0 deletions(-)
+   create mode 100644 readme.md
+git checkout -b feature-1
+   Switched to a new branch 'feature-1'
+echo "I am currently learning how to use Git branches and merge them." > featu$ echo "I am currently learning how to use Git branches and merge them." > feature.txt
+git add feature.txt
+git checkout master
+git merge feature-1
+   Updating 2606f19..794a5fb
+   Fast-forward
+   feature.txt | 1 +
+   1 file changed, 1 insertion(+)
+   create mode 100644 feature.txt
+git log master
+   commit 794a5fb6de28edf587e4c639908a5da03fb685a8 (HEAD -> master, feature-1)
+   Author: unknown <KonstantinMoser@stud.thga.de>
+   Date:   Tue May 26 16:08:10 2026 +0200
+
+       Add feature.txt with description
+
+   commit 2606f194b73a5e0e9439548b37804a66966b0dd8
+   Author: unknown <KonstantinMoser@stud.thga.de>
+   Date:   Tue May 26 16:04:33 2026 +0200
+
+       Initial commit
+
+
+****
 ```
 
 ---
@@ -68,6 +104,17 @@ In this exercise you will:
 
 ```bash
 # Paste here the push & clone commands and outputs
+(After running the given commands)
+git push -u origin-ssh master
+mkdir fresh_dir
+cd fresh_dir
+git clone Vorlesung:~/repos/myproject.git myproject-verify
+   Cloning into 'myproject-verify'...
+   remote: Enumerating objects: 3, done.
+   remote: Counting objects: 100% (3/3), done.
+   remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+   Receiving objects: 100% (3/3), done.
+
 ```
 
 ---
