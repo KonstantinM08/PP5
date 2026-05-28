@@ -137,6 +137,59 @@ git clone Vorlesung:~/repos/myproject.git myproject-verify
 
 ```bash
 # Paste here the remote‐adding & push outputs
+git remote add github git@github.com:KonstantinM08/myproject-gh.git
+git remote add gitlab git@gitlab.thga.de:Konstantin.Moser/myproject-gl.git
+git remote -v
+    github  git@github.com:KonstantinM08/myproject-gh.git (fetch)
+    github  git@github.com:KonstantinM08/myproject-gh.git (push)
+    gitlab  git@gitlab.thga.de:Konstantin.Moser/myproject-gl.git (fetch)
+    gitlab  git@gitlab.thga.de:Konstantin.Moser/myproject-gl.git (push)
+    origin  https://github.com/KonstantinM08/myproject-gh.git (fetch)
+    origin  https://github.com/KonstantinM08/myproject-gh.git (push)
+    origin-ssh      KonstantinMoser@128.140.85.215:~/repos/myproject.git (fetch)
+    origin-ssh      KonstantinMoser@128.140.85.215:~/repos/myproject.git (push)
+#Before doing pushing main to github and GitLab I had to define an ssh-key as learned from the previous exercises. Becouse of reasons
+#of convenience and readability I only show the commands for github, the process of defiening a key for gitlab is similar.
+$ ssh-keygen -t rsa -b 4096 -C "konstantin.m@mail.de"
+   Generating public/private rsa key pair.
+   Enter file in which to save the key (/c/Users/Konstamonster/.ssh/id_rsa):
+   Enter passphrase for "/c/Users/Konstamonster/.ssh/id_rsa" (empty for no passphrase):
+   Enter same passphrase again:
+   Your identification has been saved in /c/Users/Konstamonster/.ssh/id_rsa
+   Your public key has been saved in /c/Users/Konstamonster/.ssh/id_rsa.pub
+   The key fingerprint is:
+   SHA256:oIis7sG/uEQoX8dPZBtrEC4hN9osDRm2N7Il3b3pWbE konstantin.m@mail.de
+   The key's randomart image is:
+   +---[RSA 4096]----+
+   |  =o+ .          |
+   | ..@ = o         |
+   |  * X = = .      |
+   |o. O = = * o     |
+   |+oo o o S E      |
+   |=. . . = o       |
+   |.+.     +        |
+   |o +              |
+   |.=.o.            |
+   +----[SHA256]-----+
+cat ~/.ssh/id_rsa.pub # the output of this command can be used to establish a new ssh-key on github using the interface when #accessing github via webpage
+
+git push -u github main
+   Enumerating objects: 3, done.
+   Counting objects: 100% (3/3), done.
+   Writing objects: 100% (3/3), 220 bytes | 220.00 KiB/s, done.
+   Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+   To github.com:KonstantinM08/myproject-gh.git
+    * [new branch]      main -> main
+   branch 'main' set up to track 'github/main'.
+   
+git push -u gitlab main
+   Enumerating objects: 3, done.
+   Counting objects: 100% (3/3), done.
+   Writing objects: 100% (3/3), 220 bytes | 220.00 KiB/s, done.
+   Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+   To gitlab.thga.de:Konstantin.Moser/myproject-gl.git
+   * [new branch]      main -> main
+   branch 'main' set up to track 'gitlab/main'
 ```
 
 ---
